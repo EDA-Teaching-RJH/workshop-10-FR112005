@@ -1,0 +1,25 @@
+class student:
+def__init__(self, name, degree, student_id):
+if not name:
+    raise ValueError("Name cannot be empty.")
+if degree not in ["ECE", "BIO", "MECH", "EEE"]:
+    raise ValueError("Degree must be one of ['ECE', 'BIO', 'MECH', 'EEE'].")
+if not (isinstance(student_id, int) andlen(str(student_id)) == 6):
+    raise ValueError("Student ID must be a unique 6-digit number.")
+
+self.name = name
+self.degree = degree 
+self.student_id = student_id
+
+def __str__(self):
+    return f"Student(Name: {self.name}, Degree: {self.degree}, ID: {self.student_id})"
+
+@property
+def degree(self):
+    return self._degree
+
+@degree.setter
+def degree(self, value):
+    if value not in ["ECE", "BIO", "MECH", "EEE"]:
+        raise ValueError("Degree must be one of ['ECE', 'BIO', 'MECH', 'EEE'].")
+    self._degree = value 
